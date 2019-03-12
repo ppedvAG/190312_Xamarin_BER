@@ -5,10 +5,33 @@
              x:Class="HalloXForms.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Label Text="Hallo Welt" TextColor="Red" FontSize="20"/>
+        <Entry Placeholder="Username" Keyboard="Numeric"/>
+        <Entry Placeholder="Passwort" IsPassword="True"/>
+        <Editor HeightRequest="150" Placeholder="Notizen ..."/>
+
+        <Button Text="Klick mich !" Clicked="Button_Clicked"/>
+
+        <BoxView BackgroundColor="Moccasin" HeightRequest="10"/>
+        <ActivityIndicator IsRunning="True"/>
+        <Picker>
+            <Picker.Items>
+                <x:String>Apfel</x:String>
+                <x:String>Birne</x:String>
+                <x:String>Banane</x:String>
+                <x:String>Orange</x:String>
+            </Picker.Items>
+        </Picker>
+        <Slider Minimum="0" Maximum="100" Value="25"/>
+        <ProgressBar Progress="0.5"/>
+        <Stepper Minimum="0" Maximum="10" Increment="2"/>
+        <Switch IsToggled="True"/>
+        
+        <DatePicker/>
+        <TimePicker/>
+
+        <WebView Source="https://google.at" HeightRequest="100"/>
+       
     </StackLayout>
 
 </ContentPage>
