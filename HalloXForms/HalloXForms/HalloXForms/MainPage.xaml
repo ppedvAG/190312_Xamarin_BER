@@ -106,7 +106,7 @@
                  Grid.RowSpan="2"/>
     </Grid>-->
 
-    <Grid BackgroundColor="Gray" Padding="20">
+    <!--<Grid BackgroundColor="Gray" Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -123,6 +123,37 @@
         <ListView Grid.Row="1" Grid.Column="0"
                   Grid.ColumnSpan="2" BackgroundColor="Orange"/>
 
+    </Grid>-->
+
+    <Grid Padding="40" ColumnSpacing="10" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Text="1234" FontSize="40" Grid.ColumnSpan="3"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+
+        <Button Text="1" Grid.Row="1" Grid.Column="0" BackgroundColor="White" TextColor="Black" BorderRadius="30" FontSize="20"/>
+        <Button Text="2" Grid.Row="1" Grid.Column="1" BackgroundColor="White" TextColor="Black" BorderRadius="30" FontSize="20"/>
+        <Button Text="3" Grid.Row="1" Grid.Column="2" BackgroundColor="White" TextColor="Black" BorderRadius="30" FontSize="20"/>
+
+        <Button Text="4" Grid.Row="2" Grid.Column="0" BackgroundColor="White" TextColor="Black" BorderRadius="30" FontSize="20"/>
+        <Button Text="5" Grid.Row="2" Grid.Column="1" BackgroundColor="White" TextColor="Black" BorderRadius="30" FontSize="20"/>
+        <Button Text="6" Grid.Row="2" Grid.Column="2" BackgroundColor="White" TextColor="Black" BorderRadius="30" FontSize="20"/>
+
+        <Button Text="7" Grid.Row="3" Grid.Column="0" BackgroundColor="White" TextColor="Black" BorderRadius="30" FontSize="20"/>
+        <Button Text="8" Grid.Row="3" Grid.Column="1" BackgroundColor="White" TextColor="Black" BorderRadius="30" FontSize="20"/>
+        <Button Text="9" Grid.Row="3" Grid.Column="2" BackgroundColor="White" TextColor="Black" BorderRadius="30" FontSize="20"/>
+
+        <Button Text="0" Grid.Row="4" Grid.Column="1" BackgroundColor="White" TextColor="Black" BorderRadius="30" FontSize="20"/>
+        <Button Text="Dial" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="Green"  TextColor="Black" BorderRadius="30" FontSize="20"/>
     </Grid>
+    
     
 </ContentPage>
