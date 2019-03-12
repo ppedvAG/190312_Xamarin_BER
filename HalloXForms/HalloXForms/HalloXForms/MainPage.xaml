@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HalloXForms"
-             x:Class="HalloXForms.MainPage">
+             x:Class="HalloXForms.MainPage"
+             BackgroundColor="LightSalmon">
 
     <!--<StackLayout>
         <Label Text="Hallo Welt" TextColor="Red" FontSize="20"/>
@@ -32,7 +33,7 @@
         <WebView Source="https://google.at" HeightRequest="100"/>
     </StackLayout>-->
 
-    <TableView>
+    <!--<TableView>
         <TableRoot>
             <TableSection Title="Einstellungen">
                 <TextCell Text="Mein Text"
@@ -55,6 +56,25 @@
             </TableSection>
 
         </TableRoot>
-    </TableView>
+    </TableView>-->
 
+    <!--  VerticalOptions="Start"  => im StackLayout/Container selbst -->
+    <!--  VerticalOptions="EndAndExpand"  => für die Elemente IM Container -->
+    <StackLayout BackgroundColor="Sienna" Spacing="0">
+        
+        <Button Text="Klick mich !"/>
+        <Button Text="Klick mich !"/>
+        <Button Text="Klick mich !"/>
+        <Button Text="Klick mich !"/>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="CenterAndExpand">
+            <Label Text="Name:" VerticalOptions="Center"/>
+            <Entry Placeholder="z.B. Max Mustermann "
+                   HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <BoxView BackgroundColor="LavenderBlush"/>
+        <Button Text="Klick mich !"/>
+        
+    </StackLayout>
+    
 </ContentPage>
