@@ -77,7 +77,7 @@
         
     </StackLayout>-->
 
-    <StackLayout VerticalOptions="Center">
+    <!--<StackLayout VerticalOptions="Center">
         <Label Text="Welcome to Xamarin"
                FontSize="30"
                FontAttributes="Bold"
@@ -86,6 +86,43 @@
                HorizontalTextAlignment="Center"/>
         <Button Text="Login"/>
         <Button Text="Register"/>
-    </StackLayout>
+    </StackLayout>-->
+
+    <!--<Grid BackgroundColor="LightCoral"
+          ColumnSpacing="0"
+          RowSpacing="0">
+        
+        <BoxView Grid.Row="0" BackgroundColor="SlateBlue"/>
+        <StackLayout Grid.Row="2"
+                 Grid.ColumnSpan="3"
+                 BackgroundColor="PowderBlue">
+            <Button Text="Demo"/>
+            <Button Text="Demo"/>
+            <Button Text="Demo"/>
+        </StackLayout>
+
+        <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="DarkOliveGreen"/>
+        <BoxView Grid.Row="0" Grid.Column="2" BackgroundColor="LightYellow"
+                 Grid.RowSpan="2"/>
+    </Grid>-->
+
+    <Grid BackgroundColor="Gray" Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <Entry Grid.Row="0" Grid.Column="0"
+               Placeholder="Suchtext.."/>
+        <Button Grid.Row="0" Grid.Column="1"
+                Text="Suchen"/>
+        <ListView Grid.Row="1" Grid.Column="0"
+                  Grid.ColumnSpan="2" BackgroundColor="Orange"/>
+
+    </Grid>
     
 </ContentPage>
