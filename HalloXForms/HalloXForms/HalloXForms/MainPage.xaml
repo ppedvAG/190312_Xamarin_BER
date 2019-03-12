@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:HalloXForms"
              x:Class="HalloXForms.MainPage">
 
-    <StackLayout>
+    <!--<StackLayout>
         <Label Text="Hallo Welt" TextColor="Red" FontSize="20"/>
         <Entry Placeholder="Username" Keyboard="Numeric"/>
         <Entry Placeholder="Passwort" IsPassword="True"/>
@@ -29,9 +29,32 @@
         
         <DatePicker/>
         <TimePicker/>
-
         <WebView Source="https://google.at" HeightRequest="100"/>
-       
-    </StackLayout>
+    </StackLayout>-->
+
+    <TableView>
+        <TableRoot>
+            <TableSection Title="Einstellungen">
+                <TextCell Text="Mein Text"
+                          Detail="Unterüberschrift"/>
+                <ImageCell Text="Mein Bild"
+                           Detail="Meine Unterüberschrift"
+                           ImageSource="http://placekitten.com/g/100/100"/>
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+                <SwitchCell Text="Notifications" On="True"/>
+            </TableSection>
+
+            <TableSection Title="Fortgeschrittene Einstellungen">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Datum:"/>
+                        <DatePicker/>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+
+        </TableRoot>
+    </TableView>
 
 </ContentPage>
