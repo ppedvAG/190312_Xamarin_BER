@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Navigation_Demo.MD.MasterDetail_Demo"
+             xmlns:pages="clr-namespace:Navigation_Demo.MD">
+  <MasterDetailPage.Master>
+    <pages:MasterDetail_DemoMaster x:Name="MasterPage" />
+  </MasterDetailPage.Master>
+    
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:MasterDetail_DemoDetail />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+    
+</MasterDetailPage>

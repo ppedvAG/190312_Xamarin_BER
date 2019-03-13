@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:Navigation_Demo"
+             x:Class="Navigation_Demo.CarouselPage_Demo">
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Tab 1">
+        <BoxView BackgroundColor="Peru"/>
+    </ContentPage>
+    <ContentPage Title="Tab 2" >
+        <BoxView BackgroundColor="YellowGreen"/>
+    </ContentPage>
+    <ContentPage Title="Tab 3" >
+        <BoxView BackgroundColor="Accent"/>
+    </ContentPage>
+
+    <local:Seite2 Title="Seite2-Tab"/>
+    <local:MainPage/>
+</CarouselPage>

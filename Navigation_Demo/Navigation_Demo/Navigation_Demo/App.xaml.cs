@@ -11,7 +11,10 @@ namespace Navigation_Demo
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            // MainPage = new NavigationPage(new MainPage());
+            // MainPage = new TabbedPage_Demo();
+            // MainPage = new CarouselPage_Demo();
+            MainPage = new MD.MasterDetail_Demo();
         }
 
         protected override void OnStart()
