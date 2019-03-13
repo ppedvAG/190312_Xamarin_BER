@@ -3,12 +3,77 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RessourcenUndStyles"
              x:Class="RessourcenUndStyles.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Double x:Key="defaultFontSize">10</x:Double>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+            <!-- Impliziter Style -->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Fuchsia"/>
+                <Setter Property="FontSize" Value="8"/>
+                <Setter Property="BorderRadius" Value="10"/>
+                <Setter Property="TextColor" Value="Blue"/>
+            </Style>
+            
+            <!-- Expliziter Style -->
+            <Style x:Key="specialButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="LightSeaGreen"/>
+                <Setter Property="FontSize" Value="42"/>
+                <Setter Property="CornerRadius" Value="45"/>
+                <Setter Property="TextColor" Value="SeaGreen"/>
+            </Style>
+
+            <Style x:Key="specialButtonStyle2" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Red"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="TextColor" Value="Orange"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+
+    <Grid Padding="40" ColumnSpacing="10" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--<Grid.Resources>
+            <ResourceDictionary>
+                <x:Double x:Key="defaultFontSize">40</x:Double>
+            </ResourceDictionary>
+        </Grid.Resources>-->
+
+        <Label Text="1234" FontSize="40" Grid.ColumnSpan="3"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+
+        <Button Text="1" Grid.Row="1" Grid.Column="0" BackgroundColor="Orange" TextColor="Black" BorderRadius="30" FontSize="{StaticResource defaultFontSize}"/>
+        <Button Text="2" Grid.Row="1" Grid.Column="1" BackgroundColor="Orange" TextColor="Black" BorderRadius="30" FontSize="{StaticResource defaultFontSize}"/>
+        <Button Text="3" Grid.Row="1" Grid.Column="2" BackgroundColor="Orange" TextColor="Black" BorderRadius="30" FontSize="{StaticResource defaultFontSize}">
+            <Button.Resources>
+                <ResourceDictionary>
+                    <x:Double x:Key="defaultFontSize">22</x:Double>
+                </ResourceDictionary>
+            </Button.Resources>
+        </Button>
+
+        <Button Text="4" Grid.Row="2" Grid.Column="0"/>
+        <Button Text="5" Grid.Row="2" Grid.Column="1"/>
+        <Button Text="6" Grid.Row="2" Grid.Column="2"/>
+
+        <Button Text="7" Grid.Row="3" Grid.Column="0" Style="{StaticResource specialButtonStyle}" Clicked="Button_Clicked" />
+        <Button Text="8" Grid.Row="3" Grid.Column="1" Style="{StaticResource specialButtonStyle}"/>
+        <Button Text="9" Grid.Row="3" Grid.Column="2" Style="{StaticResource specialButtonStyle}"/>
+
+        <Button Text="0" Grid.Row="4" Grid.Column="1" BackgroundColor="White" TextColor="Black" CornerRadius="30" FontSize="20"/>
+        <Button Text="Dial" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="Green"  TextColor="Black" BorderRadius="30" FontSize="20"/>
+    </Grid>
 
 </ContentPage>

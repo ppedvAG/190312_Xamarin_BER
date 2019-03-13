@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RessourcenUndStyles.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <x:Double x:Key="defaultFontSize">60</x:Double>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
