@@ -19,6 +19,9 @@ namespace RessourcenUndStyles
             var button = (Button)sender;
             button.Style = (Style)Resources["specialButtonStyle2"];
 
+            // Variante mit {DynamicResource currentButtonStyle} im Button
+            // Resources["currentButtonStyle"] = Resources["redButtonStyle"];
+
             // Aus App.xaml:
             // App.Current.Resources
         }

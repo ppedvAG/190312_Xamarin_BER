@@ -14,7 +14,7 @@
                 <Setter Property="BorderRadius" Value="10"/>
                 <Setter Property="TextColor" Value="Blue"/>
             </Style>
-            
+
             <!-- Expliziter Style -->
             <Style x:Key="specialButtonStyle" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="LightSeaGreen"/>
