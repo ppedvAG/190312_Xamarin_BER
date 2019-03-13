@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace NavigationMitMasterDetail
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MD_RootDetail : ContentPage
     {
-        public MainPage()
+        public MD_RootDetail()
         {
             InitializeComponent();
         }

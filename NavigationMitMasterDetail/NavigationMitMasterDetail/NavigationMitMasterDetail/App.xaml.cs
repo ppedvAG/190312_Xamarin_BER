@@ -11,7 +11,7 @@ namespace NavigationMitMasterDetail
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MD_Root();
         }
 
         protected override void OnStart()
