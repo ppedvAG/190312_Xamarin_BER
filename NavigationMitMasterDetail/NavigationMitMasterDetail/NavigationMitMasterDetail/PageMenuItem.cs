@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 namespace NavigationMitMasterDetail
 {
 
-    public class MD_RootMenuItem
+    public class PageMenuItem
     {
-        public MD_RootMenuItem()
+        public PageMenuItem(Type TargetType,bool WithNavigation = false)
         {
-            TargetType = typeof(MD_RootDetail);
+            this.TargetType = TargetType;
+            this.WithNavigation = WithNavigation;
         }
         public int Id { get; set; }
         public string Title { get; set; }
-
         public Type TargetType { get; set; }
+        public bool WithNavigation { get; private set; }
     }
 }

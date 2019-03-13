@@ -27,17 +27,14 @@ namespace NavigationMitMasterDetail
 
         class MD_RootMasterViewModel : INotifyPropertyChanged
         {
-            public ObservableCollection<MD_RootMenuItem> MenuItems { get; set; }
+            public ObservableCollection<PageMenuItem> MenuItems { get; set; }
             
             public MD_RootMasterViewModel()
             {
-                MenuItems = new ObservableCollection<MD_RootMenuItem>(new[]
+                MenuItems = new ObservableCollection<PageMenuItem>(new[]
                 {
-                    new MD_RootMenuItem { Id = 0, Title = "Page 1" },
-                    new MD_RootMenuItem { Id = 1, Title = "Page 2" },
-                    new MD_RootMenuItem { Id = 2, Title = "Page 3" },
-                    new MD_RootMenuItem { Id = 3, Title = "Page 4" },
-                    new MD_RootMenuItem { Id = 4, Title = "Page 5" },
+                    new PageMenuItem(typeof(Tabs)) { Id = 0, Title = "Tabs" },
+                    new PageMenuItem(typeof(FirstPage),true) { Id = 1, Title = "NavigationPage" },
                 });
             }
             

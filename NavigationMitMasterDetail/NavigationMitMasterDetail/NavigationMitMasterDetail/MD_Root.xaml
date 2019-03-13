@@ -3,14 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NavigationMitMasterDetail.MD_Root"
              xmlns:pages="clr-namespace:NavigationMitMasterDetail">
-  <MasterDetailPage.Master>
-    <pages:MD_RootMaster x:Name="MasterPage" />
-  </MasterDetailPage.Master>
-  <MasterDetailPage.Detail>
-    <NavigationPage>
-      <x:Arguments>
-        <pages:MD_RootDetail />
-      </x:Arguments>
-    </NavigationPage>
-  </MasterDetailPage.Detail>
+    <MasterDetailPage.Master>
+        <pages:MD_RootMaster x:Name="MasterPage" />
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage Title="Dummy damit es keinen fehler gibt"/>
+    </MasterDetailPage.Detail>
+    
 </MasterDetailPage>
