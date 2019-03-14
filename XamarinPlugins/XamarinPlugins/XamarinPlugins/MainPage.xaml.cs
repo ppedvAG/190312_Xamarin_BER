@@ -29,5 +29,10 @@ namespace XamarinPlugins
         {
             morse.Dauer = Convert.ToInt32(e.NewValue);
         }
+
+        private void ButtonAbbrechen_Clicked(object sender, EventArgs e)
+        {
+            morse.Abbrechen();
+        }
     }
 }

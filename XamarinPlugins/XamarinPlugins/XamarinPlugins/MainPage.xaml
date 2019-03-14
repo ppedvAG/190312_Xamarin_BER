@@ -10,6 +10,7 @@
         <Label Text="{Binding Source={x:Reference sliderDauer},Path=Value,StringFormat='Intervall für Morse: {0}ms'}"/>
         <Button x:Name="buttonTextToSpeech" Text="Text to Speech" Clicked="ButtonTextToSpeech_Clicked"/>
         <Button x:Name="buttonTextToMorse" Text="Text to Morsecode" Clicked="ButtonTextToMorse_Clicked"/>
+        <Button x:Name="buttonAbbrechen" Text="Abbrechen" Clicked="ButtonAbbrechen_Clicked"/>
     </StackLayout>
 
 </ContentPage>

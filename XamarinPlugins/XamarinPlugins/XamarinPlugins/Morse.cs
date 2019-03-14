@@ -52,7 +52,14 @@ namespace XamarinPlugins
             {'9',"llllk" },
             {'0',"lllll" },
         };
+
+        public void Abbrechen()
+        {
+            abbrechen = true;
+        }
+
         public int Dauer { get; set; } = 250;
+        private bool abbrechen = false;
 
         private async Task Lang()
         {
@@ -81,6 +88,11 @@ namespace XamarinPlugins
         {
             foreach (char zeichen in eingabe)
             {
+                if(abbrechen)
+                {
+                    abbrechen = !abbrechen;
+                    break;
+                }
                 if (Mapping.ContainsKey(char.ToUpper(zeichen)))
                 {
                     foreach (char Signal in Mapping[char.ToUpper(zeichen)])
