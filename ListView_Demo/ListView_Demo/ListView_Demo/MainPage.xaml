@@ -9,7 +9,8 @@
     <StackLayout Padding="20" BackgroundColor="Orange">
         <SearchBar x:Name="searchBarVoranme" TextChanged="SearchBarVoranme_TextChanged"/>
         <Button x:Name="buttonPersonenLaden" Text="Personen laden!" Clicked="ButtonPersonenLaden_Clicked"/>
-        <ListView x:Name="listViewPersonen" BackgroundColor="White"
+        <Button x:Name="buttonGetSelectedItems" Text="Selektierte Personen" Clicked="ButtonGetSelectedItems_Clicked"/>
+        <!--<ListView x:Name="listViewPersonen" BackgroundColor="White"
                   IsPullToRefreshEnabled="True"
                   Refreshing="ListViewPersonen_Refreshing">
             <ListView.ItemTemplate>
@@ -24,7 +25,8 @@
                     
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
+        <local:MultiSelectListView x:Name="mutliSelectListView" />
     </StackLayout>
 
 </ContentPage>

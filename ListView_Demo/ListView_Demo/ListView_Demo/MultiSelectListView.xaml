@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListView_Demo.MultiSelectListView">
+    <ListView x:Name="listViewData" ItemsSource="{Binding Data}"
+              SelectionMode="None"
+              ItemTapped="ListViewData_ItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Label Text="{Binding Item}">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding IsSelected}" Value="True">
+                                <Setter Property="BackgroundColor" Value="LightBlue" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentView>

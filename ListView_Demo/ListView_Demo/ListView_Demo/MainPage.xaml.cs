@@ -37,18 +37,20 @@ namespace ListView_Demo
         private void ButtonPersonenLaden_Clicked(object sender, EventArgs e)
         {
             LoadPersonen();
-            listViewPersonen.ItemsSource = personen;
+            //listViewPersonen.ItemsSource = personen;
+
+            mutliSelectListView.Data = new ObservableCollection<SelectableItem>(personen.Select(x => new SelectableItem { Item = x.Vorname, IsSelected = false }));
         }
 
         private void ListViewPersonen_Refreshing(object sender, EventArgs e)
         {
             LoadPersonen();
-            listViewPersonen.ItemsSource = personen;
+            //listViewPersonen.ItemsSource = personen;
 
             // Variante 1
             // listViewPersonen.IsRefreshing = false;
 
-            listViewPersonen.EndRefresh();
+            //listViewPersonen.EndRefresh();
         }
 
         private void MenuItemInfo_Clicked(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace ListView_Demo
             MenuItem item = (MenuItem)sender;
             var person = (Person)item.BindingContext;
 
-            listViewPersonen.SelectedItem = person;
+            //listViewPersonen.SelectedItem = person;
 
             DisplayAlert("Info", $"{person.Vorname} {person.Nachname}", "Ok");
         }
@@ -76,7 +78,16 @@ namespace ListView_Demo
 
         private void SearchBarVoranme_TextChanged(object sender, TextChangedEventArgs e)
         {
-            listViewPersonen.ItemsSource = personen.Where(x => x.Vorname.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
+            //listViewPersonen.ItemsSource = personen.Where(x => x.Vorname.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
+        }
+
+        private void ButtonGetSelectedItems_Clicked(object sender, EventArgs e)
+        {
+            var namen = mutliSelectListView.SelectedItems.Select(x => x.Item).ToArray();
+            if (namen.Length == 0)
+                DisplayAlert("Nichts ausgewählt", "Lies den Titel", "Ok...");
+            else
+                DisplayAlert("Selektierte Personen", string.Join(Environment.NewLine, namen), "OK");
         }
     }
 }
