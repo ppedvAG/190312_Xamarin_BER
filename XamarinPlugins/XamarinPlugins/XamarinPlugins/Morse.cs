@@ -51,9 +51,9 @@ namespace XamarinPlugins
         private const int unit = 250;
         private async Task Lang()
         {
-           await Flashlight.TurnOnAsync();
-           await Task.Delay(unit * 3);
-           await Flashlight.TurnOffAsync();
+            await Flashlight.TurnOnAsync();
+            await Task.Delay(unit * 3);
+            await Flashlight.TurnOffAsync();
         }
         private async Task Kurz()
         {
@@ -74,18 +74,21 @@ namespace XamarinPlugins
         {
             foreach (char zeichen in eingabe)
             {
-                if(string.IsNullOrWhiteSpace(zeichen.ToString()))
+                if (Mapping.ContainsKey(char.ToUpper(zeichen)))
+                {
+                    foreach (char Signal in Mapping[char.ToUpper(zeichen)])
+                    {
+                        if (Signal == 'k')
+                            await Kurz();
+                        else
+                            await Lang();
+                        await ZeichenPause();
+                    }
+                }
+                else if (string.IsNullOrWhiteSpace(zeichen.ToString()))
                 {
                     await WortPause();
                     continue;
-                }
-                foreach (char Signal in Mapping[char.ToUpper(zeichen)])
-                {
-                    if (Signal == 'k')
-                        await Kurz();
-                    else
-                        await Lang();
-                    await ZeichenPause();
                 }
             }
         }
