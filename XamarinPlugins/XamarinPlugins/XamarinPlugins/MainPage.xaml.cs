@@ -34,6 +34,7 @@ namespace XamarinPlugins
 
         private void ButtonAbbrechen_Clicked(object sender, EventArgs e)
         {
+            entryInhalt.Text = string.Empty;
             morse.Abbrechen();
         }
     }
