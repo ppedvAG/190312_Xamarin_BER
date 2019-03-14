@@ -17,12 +17,14 @@ namespace XamarinPlugins
         private Morse morse = new Morse();
         private async void ButtonTextToSpeech_Clicked(object sender, EventArgs e)
         {
-            await TextToSpeech.SpeakAsync(entryInhalt.Text);
+            if (!string.IsNullOrEmpty(entryInhalt.Text))
+                await TextToSpeech.SpeakAsync(entryInhalt.Text);
         }
 
         private async void ButtonTextToMorse_Clicked(object sender, EventArgs e)
         {
-            await morse.MorseAusgeben(entryInhalt.Text);
+            if(!string.IsNullOrEmpty(entryInhalt.Text))
+                await morse.MorseAusgeben(entryInhalt.Text);
         }
 
         private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
