@@ -6,6 +6,8 @@
 
     <StackLayout VerticalOptions="Center">
         <Entry x:Name="entryInhalt" Placeholder="dein Text"/>
+        <Slider x:Name="sliderDauer" Maximum="3000" Minimum="250" Value="500" ValueChanged="Slider_ValueChanged"/>
+        <Label Text="{Binding Source={x:Reference sliderDauer},Path=Value,StringFormat='Intervall für Morse: {0}ms'}"/>
         <Button x:Name="buttonTextToSpeech" Text="Text to Speech" Clicked="ButtonTextToSpeech_Clicked"/>
         <Button x:Name="buttonTextToMorse" Text="Text to Morsecode" Clicked="ButtonTextToMorse_Clicked"/>
     </StackLayout>

@@ -24,5 +24,10 @@ namespace XamarinPlugins
         {
             await morse.MorseAusgeben(entryInhalt.Text);
         }
+
+        private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            morse.Dauer = Convert.ToInt32(e.NewValue);
+        }
     }
 }
