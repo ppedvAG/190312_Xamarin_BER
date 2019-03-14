@@ -37,6 +37,10 @@ namespace XamarinPlugins
             {'X',"lkkl" },
             {'Y',"lkll" },
             {'Z',"llkk" },
+            {'Ä',"klpk" },
+            {'Ö',"lllpk" },
+            {'Ü',"kklpk" },
+            {'ẞ',"kkkpkkk" },
             {'1',"kllll" },
             {'2',"kklll" },
             {'3',"kkkll" },
@@ -48,26 +52,29 @@ namespace XamarinPlugins
             {'9',"llllk" },
             {'0',"lllll" },
         };
-        private const int unit = 250;
+        public int Dauer { get; set; } = 250;
+
         private async Task Lang()
         {
             await Flashlight.TurnOnAsync();
-            await Task.Delay(unit * 3);
+            Vibration.Vibrate(Dauer * 3);
+            await Task.Delay(Dauer * 3);
             await Flashlight.TurnOffAsync();
         }
         private async Task Kurz()
         {
             await Flashlight.TurnOnAsync();
-            await Task.Delay(unit * 1);
+            Vibration.Vibrate(Dauer * 1);
+            await Task.Delay(Dauer * 1);
             await Flashlight.TurnOffAsync();
         }
         private async Task ZeichenPause()
         {
-            await Task.Delay(unit * 3);
+            await Task.Delay(Dauer * 3);
         }
         private async Task WortPause()
         {
-            await Task.Delay(unit * 7);
+            await Task.Delay(Dauer * 7);
         }
 
         public async Task MorseAusgeben(string eingabe)
@@ -78,11 +85,18 @@ namespace XamarinPlugins
                 {
                     foreach (char Signal in Mapping[char.ToUpper(zeichen)])
                     {
-                        if (Signal == 'k')
-                            await Kurz();
-                        else
-                            await Lang();
-                        await ZeichenPause();
+                        switch (Signal)
+                        {
+                            case 'k':
+                                await Kurz();
+                                break;
+                            case 'l':
+                                await Lang();
+                                break;
+                            case 'p':
+                                await ZeichenPause(); // Ä,Ö,Ü
+                                break;
+                        }
                     }
                 }
                 else if (string.IsNullOrWhiteSpace(zeichen.ToString()))
