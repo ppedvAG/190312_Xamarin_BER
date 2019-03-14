@@ -48,7 +48,7 @@ namespace XamarinPlugins
             {'9',"llllk" },
             {'0',"lllll" },
         };
-        private const int unit = 500;
+        private const int unit = 250;
         private async Task Lang()
         {
            await Flashlight.TurnOnAsync();
