@@ -81,7 +81,7 @@ namespace XamarinPlugins
                 }
                 foreach (char Signal in Mapping[char.ToUpper(zeichen)])
                 {
-                    if (Signal == 'K')
+                    if (Signal == 'k')
                         await Kurz();
                     else
                         await Lang();
