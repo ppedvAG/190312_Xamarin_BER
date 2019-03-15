@@ -21,5 +21,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button x:Name="buttonExport" Text="Export" Clicked="ButtonExport_Clicked"/>
     </StackLayout>
 </ContentPage>

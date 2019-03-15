@@ -43,5 +43,13 @@ namespace XamarinPlugins
         {
             MessagingCenter.Send(this, "Speak", (e.Item as LogItem).Text);
         }
+
+        private void ButtonExport_Clicked(object sender, EventArgs e)
+        {
+            DependencyService.Get<IFileSystemHelper>()
+                             .SaveText("log.txt",
+                             string.Join(Environment.NewLine,
+                             log.Select(x => $"{x.Date.ToLongTimeString()}: {x.Text}").ToArray()));
+        }
     }
 }
