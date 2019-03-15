@@ -18,7 +18,7 @@
         <Label Grid.Row="0" Text="Einstellungen für Text to Speech" FontSize="25" FontAttributes="Bold"/>
 
         <Label Grid.Row="1" Text="{Binding Source={x:Reference sliderPitch},Path=Value,StringFormat='Pitch: {0}'}"/>
-        <Slider Grid.Row="2" x:Name="sliderPitch" Minimum="0.01" Maximum="2.0" Margin="20,0" ValueChanged="SliderPitch_ValueChanged"/>
+        <Slider Grid.Row="2" x:Name="sliderPitch" Minimum="0.01" Maximum="2.0" Value="1" Margin="20,0" ValueChanged="SliderPitch_ValueChanged"/>
 
         <Label Grid.Row="3" Text="{Binding Source={x:Reference sliderVolume},Path=Value,StringFormat='Volume: {0}'}"/>
         <Slider Grid.Row="4" x:Name="sliderVolume" Minimum="0" Maximum="1.0" Value="1" ValueChanged="SliderVolume_ValueChanged" Margin="20,0"/>
@@ -28,7 +28,7 @@
                   ItemSelected="ListViewSpeaker_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding Language}"/>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Country}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

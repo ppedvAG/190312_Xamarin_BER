@@ -29,11 +29,13 @@ namespace XamarinPlugins
             if(Application.Current.Properties.ContainsKey("Pitch"))
                 sliderPitch.Value = Convert.ToDouble(Application.Current.Properties["Pitch"]);
 
+
+
             // Speaker laden
 
             var locales = await TextToSpeech.GetLocalesAsync();
             if (locales.Count() > 0)
-                listViewSpeaker.ItemsSource = locales;
+                listViewSpeaker.ItemsSource = locales.OrderBy(x => x.Name);
         }
 
         private void ContentPage_Disappearing(object sender, EventArgs e)
