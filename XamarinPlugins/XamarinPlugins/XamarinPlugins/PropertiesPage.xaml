@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPlugins.PropertiesPage"
+             Title="Einstellungen"
+             Appearing="ContentPage_Appearing"
+             Disappearing="ContentPage_Disappearing">
+    <TableView>
+        <TableRoot>
+            <TableSection Title="Einstellungen für Text 2 Speech">
+                <ViewCell>
+                    <ListView x:Name="listViewLocales" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Name}" Detail="{Binding Language}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding Source={x:Reference sliderPitch},Path=Value,StringFormat='Pitch: {0}'}"/>
+                        <Slider x:Name="sliderPitch" Minimum="0" Maximum="2.0"/>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding Source={x:Reference sliderVolume},Path=Value,StringFormat='Volume: {0}'}"/>
+                        <Slider x:Name="sliderVolume" Minimum="0" Maximum="1.0"/>
+                    </StackLayout>
+                </ViewCell>
+
+
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
