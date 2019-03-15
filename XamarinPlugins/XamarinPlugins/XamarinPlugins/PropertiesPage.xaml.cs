@@ -15,17 +15,28 @@ namespace XamarinPlugins
         public PropertiesPage()
         {
             InitializeComponent();
+            this.BindingContext = this;
         }
 
-        private async void ContentPage_Appearing(object sender, EventArgs e)
+        private SpeechOptions currentOptions = new SpeechOptions();
+         
+        private void ContentPage_Appearing(object sender, EventArgs e)
         {
-            //var result  = await TextToSpeech.GetLocalesAsync();
-            //listViewLocales.ItemsSource = result.ToList();
         }
 
         private void ContentPage_Disappearing(object sender, EventArgs e)
         {
+            MessagingCenter.Send(this, "newSpeechOptions", currentOptions);
+        }
 
+        private void SliderPitch_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            currentOptions.Pitch = Convert.ToSingle(e.NewValue);
+        }
+
+        private void SliderVolume_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            currentOptions.Volume = Convert.ToSingle(e.NewValue);
         }
     }
 }
