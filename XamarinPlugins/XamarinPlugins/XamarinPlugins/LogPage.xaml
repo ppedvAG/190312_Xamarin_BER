@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinPlugins"
              x:Class="XamarinPlugins.LogPage">
     <StackLayout>
         <SearchBar x:Name="searchBarSuchtext" Placeholder="Suche nach Eingabe" TextChanged="SearchBarSuchtext_TextChanged"/>
-        <Button x:Name="buttonGetLog" Text="Log laden" Clicked="ButtonGetLog_Clicked">
-            <Button.IsVisible>
+        <local:UWPCustomButton x:Name="buttonGetLog" Text="Log laden" Clicked="ButtonGetLog_Clicked">
+            <local:UWPCustomButton.IsVisible>
                 <OnPlatform UWP="True" Default="False"/>
-            </Button.IsVisible>
-        </Button>
+            </local:UWPCustomButton.IsVisible>
+        </local:UWPCustomButton>
         <ListView x:Name="listViewLog"
                   IsPullToRefreshEnabled="True"
                   Refreshing="ListViewLog_Refreshing"
