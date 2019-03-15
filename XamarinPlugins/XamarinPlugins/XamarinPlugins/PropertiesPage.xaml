@@ -13,7 +13,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Text="Einstellungen für Text to Speech" FontSize="25" FontAttributes="Bold"/>
 
@@ -23,8 +23,15 @@
         <Label Grid.Row="3" Text="{Binding Source={x:Reference sliderVolume},Path=Value,StringFormat='Volume: {0}'}"/>
         <Slider Grid.Row="4" x:Name="sliderVolume" Minimum="0" Maximum="1.0" Value="1" ValueChanged="SliderVolume_ValueChanged" Margin="20,0"/>
 
-        <!--<Label Grid.Row="5" Text="{Binding Source={x:Reference sliderVolume},Path=Value,StringFormat='Volume: {0}'}"/>
-        <Slider Grid.Row="6" x:Name="sliderVolume" Minimum="0" Maximum="1.0" Value="0.5" Margin="20,0"/>-->
+        <Label Grid.Row="5" Text="Speaker:"/>
+        <ListView Grid.Row="6" x:Name="listViewSpeaker" Margin="10"
+                  ItemSelected="ListViewSpeaker_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Language}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
 
     </Grid>

@@ -20,7 +20,7 @@ namespace XamarinPlugins
 
         private SpeechOptions currentOptions = new SpeechOptions();
          
-        private void ContentPage_Appearing(object sender, EventArgs e)
+        private async void ContentPage_Appearing(object sender, EventArgs e)
         {
             // Werte laden
             if (Application.Current.Properties.ContainsKey("Volume"))
@@ -28,6 +28,12 @@ namespace XamarinPlugins
 
             if(Application.Current.Properties.ContainsKey("Pitch"))
                 sliderPitch.Value = Convert.ToDouble(Application.Current.Properties["Pitch"]);
+
+            // Speaker laden
+
+            var locales = await TextToSpeech.GetLocalesAsync();
+            if (locales.Count() > 0)
+                listViewSpeaker.ItemsSource = locales;
         }
 
         private void ContentPage_Disappearing(object sender, EventArgs e)
@@ -48,6 +54,11 @@ namespace XamarinPlugins
         private void SliderVolume_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             currentOptions.Volume = Convert.ToSingle(e.NewValue);
+        }
+
+        private void ListViewSpeaker_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            currentOptions.Locale = e.SelectedItem as Locale;
         }
     }
 }
