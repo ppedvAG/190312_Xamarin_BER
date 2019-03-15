@@ -22,11 +22,22 @@ namespace XamarinPlugins
          
         private void ContentPage_Appearing(object sender, EventArgs e)
         {
+            // Werte laden
+            if (Application.Current.Properties.ContainsKey("Volume"))
+                sliderVolume.Value = Convert.ToDouble(Application.Current.Properties["Volume"]);
+
+            if(Application.Current.Properties.ContainsKey("Pitch"))
+                sliderPitch.Value = Convert.ToDouble(Application.Current.Properties["Pitch"]);
         }
 
         private void ContentPage_Disappearing(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "newSpeechOptions", currentOptions);
+
+            // Werte für den nächten Programmstart speichern
+            Application.Current.Properties["Volume"] = sliderVolume.Value;
+            Application.Current.Properties["Pitch"] = sliderPitch.Value;
+            Application.Current.SavePropertiesAsync();
         }
 
         private void SliderPitch_ValueChanged(object sender, ValueChangedEventArgs e)

@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Text="Einstellungen für Text to Speech" FontSize="30" FontAttributes="Bold"/>
+        <Label Grid.Row="0" Text="Einstellungen für Text to Speech" FontSize="25" FontAttributes="Bold"/>
 
         <Label Grid.Row="1" Text="{Binding Source={x:Reference sliderPitch},Path=Value,StringFormat='Pitch: {0}'}"/>
         <Slider Grid.Row="2" x:Name="sliderPitch" Minimum="0.01" Maximum="2.0" Margin="20,0" ValueChanged="SliderPitch_ValueChanged"/>
