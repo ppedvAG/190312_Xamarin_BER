@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SQLite;
+using System;
+using System.IO;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,9 +17,14 @@ namespace XamarinPlugins
             MainPage = new TabbedPageRoot();
         }
 
+        public SQLiteAsyncConnection Connection { get; set; }
+
         protected override void OnStart()
         {
-            // Handle when your app starts
+            var fullPath = Path.Combine(FileSystem.AppDataDirectory, "db.sqlite");
+            Connection = new SQLiteAsyncConnection(fullPath);
+
+            Connection.CreateTableAsync<LogItem>(); // Wenn die Tabelle bereits existiert, passiert nichts !
         }
 
         protected override void OnSleep()

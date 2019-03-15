@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinPlugins.iOS", "Xamar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinPlugins.UWP", "XamarinPlugins\XamarinPlugins.UWP\XamarinPlugins.UWP.csproj", "{40144C2A-232F-409B-9C23-ABFE92FA3D52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinPlugins", "XamarinPlugins\XamarinPlugins\XamarinPlugins.csproj", "{608FDFA9-52BF-4F10-B42A-A60D1002B0DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinPlugins", "XamarinPlugins\XamarinPlugins\XamarinPlugins.csproj", "{608FDFA9-52BF-4F10-B42A-A60D1002B0DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

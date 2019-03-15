@@ -5,6 +5,7 @@
              x:Class="XamarinPlugins.TabbedPageRoot">
 
     <local:MainPage Title="Spaß mit Texten"/>
+    <local:LogPage Title="Log"/>
     <local:PropertiesPage Title="Einstellungen"/>
-
+    
 </TabbedPage>

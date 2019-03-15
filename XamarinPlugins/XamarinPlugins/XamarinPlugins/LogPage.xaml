@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPlugins.LogPage">
+    <StackLayout>
+        <SearchBar x:Name="searchBarSuchtext" Placeholder="Suche nach Eingabe" TextChanged="SearchBarSuchtext_TextChanged"/>
+        <Button x:Name="buttonGetLog" Text="Log laden" Clicked="ButtonGetLog_Clicked">
+            <Button.IsVisible>
+                <OnPlatform UWP="True" Default="False"/>
+            </Button.IsVisible>
+        </Button>
+        <ListView x:Name="listViewLog"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewLog_Refreshing"
+                  SelectionMode="None"
+                  ItemTapped="ListViewLog_ItemTapped">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Text}" Detail="{Binding Date}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

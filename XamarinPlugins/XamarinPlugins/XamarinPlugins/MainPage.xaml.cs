@@ -13,7 +13,13 @@ namespace XamarinPlugins
         public MainPage()
         {
             InitializeComponent();
-            MessagingCenter.Subscribe<PropertiesPage,SpeechOptions>(this, "newSpeechOptions", SetSpechOptions);
+            MessagingCenter.Subscribe<PropertiesPage, SpeechOptions>(this, "newSpeechOptions", SetSpechOptions);
+            MessagingCenter.Subscribe<LogPage, string>(this, "Speak", SpeakText);
+        }
+
+        private async void SpeakText(LogPage arg1, string logText)
+        {
+            await TextToSpeech.SpeakAsync(logText, currentOptions);
         }
 
         private void SetSpechOptions(PropertiesPage sender, SpeechOptions newOptions)
@@ -27,12 +33,16 @@ namespace XamarinPlugins
         private async void ButtonTextToSpeech_Clicked(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(entryInhalt.Text))
+            {
                 await TextToSpeech.SpeakAsync(entryInhalt.Text, currentOptions);
+                if (await ((App)App.Current).Connection.Table<LogItem>().CountAsync(x => x.Text.Equals(entryInhalt.Text)) == 0)
+                    await ((App)App.Current).Connection.InsertAsync(new LogItem { Text = entryInhalt.Text, Date = DateTime.Now });
+            }
         }
 
         private async void ButtonTextToMorse_Clicked(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(entryInhalt.Text))
+            if (!string.IsNullOrEmpty(entryInhalt.Text))
                 await morse.MorseAusgeben(entryInhalt.Text);
         }
 
